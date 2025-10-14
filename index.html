@@ -17,73 +17,163 @@
 
 <body>
 
-  <a-scene fog="type: exponential; color: #2B4A7C; density: 0.25">
+  <a-scene fog="color: #292b66; density: 0.25; type: exponential" keyboard-shortcuts="" screenshot="" xr-mode-ui=""
+    device-orientation-permission-ui="">
     <a-assets>
-      <a-asset-item id="fridge" src="assets/Ice Box.glb"></a-asset-item>
+      <a-asset-item id="fridge" src="assets/retro_fridge.glb"></a-asset-item>
       <a-asset-item id="can" src="assets/Soda Can.glb"></a-asset-item>
 
     </a-assets>
 
-    <a-entity gltf-model="#fridge" position="0 1 -5" rotation="0 180 0" scale="5 5 5"></a-entity>
-    <a-entity gltf-model="#can" position="0 1 -5" rotation="0 180 0" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-0.41477 1 -5"
-      rotation="-3.680107918125277 174.2576649377032 -27.66354826450641" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-0.19485 1 -4.2616" rotation="0 180 0"
-      scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-0.41477 1 -4.28061"
-      rotation="-3.680107918125277 174.2576649377032 -27.66354826450641" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-0.2963 0.44568 -5.54221"
-      rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-1.05665 1 -5"
-      rotation="-47.05530484070911 139.1777509730234 6.294514337307224" scale="0.05 0.05 0.05"></a-entity><a-entity
-      gltf-model="assets/Soda Can.glb" position="-0.2963 0.44568 -5.54221"
-      rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-1.05665 1 -5"
-      rotation="-47.05530484070911 139.1777509730234 6.294514337307224" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-1.47238 1.17536 -5"
-      rotation="5.120523815084168 -166.37319271890794 -17.502141767861257" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-1.72409 1.71314 -5"
-      rotation="-8.313044649553113 177.78651199791392 11.88027988203762" scale="0.05 0.05 0.05"></a-entity>
-    <a-entity gltf-model="assets/Soda Can.glb" position="-1.81924 2.26782 -5"
-      rotation="9.609648139934167 -170.45150630464917 -14.62245588953374" scale="0.05 0.05 0.05"></a-entity>
-    <!--Rectangle -->
-    <a-box position="-0.56333 2.29226 -4.72974" width="1
-    q" height="2" color="#00E5FF" material="anisotropy: 0.01; color: #0e1e38; emissiveIntensity: -5.56"
-      -0.17818987428568603="" -89.7045642368622="" -89.91541270547036"=""
-      geometry="depth: 2.16; height: 0.23; width: 0.26">
-
-
-    </a-box>
-    <a-box position="-0.57074 3.42395 -4.72974" width="1
-    q" height="2" color="#00E5FF" material="anisotropy: 0.01; color: #0e1e38; emissiveIntensity: -5.56"
-      -0.17818987428568603="" -89.7045642368622="" -89.91541270547036"=""
-      geometry="depth: 2.16; height: 0.23; width: 0.26">
-
-
-    </a-box>
-    <!-- Rectangle néon bleu -->
-    <a-plane position="-0.6161 2.8669 -4.72974" width="1
-    q" height="2" color="#00E5FF" material="side: double; emissive: #00E5FF"
-      rotation="-0.17818987428568603 -89.7045642368622 -89.91541270547036" geometry="height: 2.18; width: 0.93">
-      <!-- Lumière du néon -->
-      <a-entity light="color: #00E5FF; distance: 8; intensity: 10; type: point" position="0 0 0.5"></a-entity>
-    </a-plane>
-    <a-plane position="-0.62508 1.60212 -5.73173" width="1
-    q" height="2" color="#00E5FF" material="side: double; emissive: #00E5FF"
-      rotation="-0.17818987428568603 0.6079082206338035 -89.91541270547036" geometry="height: 0.14; width: 3.56"
-      id="neon">
-      <!-- Lumière du néon -->
-      <a-entity light="color: #00E5FF; distance: 8; intensity: 10; type: point" position="0 0 0.5"></a-entity>
+    <!-- Plan noir sous le frigo -->
+    <a-plane position="0 -0.76397 -4" rotation="-90 0 0" width="20" height="20" color="#000000"
+      material="roughness: 0.9" scale="2.69 3.2 1" id="floor">
     </a-plane>
 
-    <!-- Lumières pour ambiance bleu/violet -->
-    <a-entity light="type: ambient; intensity: 0.3; color: #5B7FCC"></a-entity>
-    <a-entity light="type: directional; intensity: 0.4; color: #7BA3E8" position="2 5 1"></a-entity>
-    <a-entity light="type: point; intensity: 1.5; color: #00E5FF; distance: 10" position="0 3 -5"></a-entity>
+
+    <a-entity id="main-group" position="5.47925 0 -3.8006" rotation="0 78.78971823962003 0">
+
+      <!-- Lumière intense derrière le frigo (effet néon cyan) - RÉDUITE -->
+      <a-entity position="0 2.5 -5.5">
+        <!-- Lumière principale cyan - intensité réduite -->
+        <a-entity light="color: #00FFE5; distance: 10; intensity: 2; type: point"></a-entity>
+        <!-- Spot dirigé vers l'avant pour créer le halo - réduit -->
+        <a-entity light="color: #00E5FF; distance: 15; intensity: 1.5; penumbra: 0.3; type: spot"></a-entity>
+        <!-- Point light bleu supplémentaire - réduit -->
+        <a-entity light="color: #4FC3F7; distance: 8; intensity: 1; type: point" position="0 0.5 0"></a-entity>
+      </a-entity>
+
+      <a-entity gltf-model="assets/retro_fridge.glb" position="0 -1.90381 -3.85804" rotation="0 -89.76816255212174 0"
+        scale="3 3 3"></a-entity>
+
+      <!-- Groupe de canettes -->
+      <a-entity id="cans-group">
+        <a-entity gltf-model="assets/Soda Can.glb" position="0 1 -5" rotation="0 180 0"
+          scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-0.41477 1 -5"
+          rotation="-3.680107918125277 174.2576649377032 -27.66354826450641" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-0.19485 1 -4.2616" rotation="0 180 0"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb" position="-1.35416 1 -3.46005"
+          rotation="0 43.945862886534144 0" scale="0.035 0.03 0.04"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-1.50954 1 -3.34331" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb" position="-1.73345 1 -3.18865"
+          rotation="0 43.945862886534144 0" scale="0.035 0.03 0.04"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-1.91377 1 -3.0259" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb" position="-2.13942 1 -2.87137"
+          rotation="0 43.945862886534144 0" scale="0.035 0.03 0.04"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-2.32493 1 -2.77851" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.32493 1.65624 -2.77851" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.32493 0.23877 -2.77851" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.29916 0.23877 -3.59993" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.20832 1.00476 -3.59993" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.27005 1.64916 -3.59993" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.14867 1.65624 -2.924" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.14867 0.22025 -2.924" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.00993 1.65624 -3.0241" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.00993 0.21516 -3.0241" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.80639 1.64527 -3.18914" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.80639 0.20986 -3.18914" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.63021 1.64059 -3.33389" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.63021 0.25324 -3.33389" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.63021 1.64059 -3.33389" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.44681 1.65099 -3.4625" rotation="0 43.945862886534144 0"
+          scale="0.035 0.03 0.04"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.44681 0.22094 -3.4625" rotation="0 43.945862886534144 0" scale="0.035 0.03 0.04"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-0.41477 1 -4.28061"
+          rotation="-3.680107918125277 174.2576649377032 -27.66354826450641" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-0.2963 0.44568 -5.54221"
+          rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-0.2963 -0.24199 -5.54221"
+          rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="0.04781 -0.24199 -5.54221"
+          rotation="-20.021437193051487 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="0.04781 -0.04718 -4.25088"
+          rotation="23.105096046445578 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-0.52314 -0.24199 -5.84141"
+          rotation="-20.021437193051487 -67.28759050236876 0" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-0.52314 -0.21444 -4.82344"
+          rotation="23.02316308174187 -91.21087028026115 -86.8735797711208" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-0.28955 -0.21444 -4.82344"
+          rotation="23.02316308174187 -91.21087028026115 -86.8735797711208" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="0.37237 -0.21444 -4.82344"
+          rotation="23.02316308174187 -91.21087028026115 -86.8735797711208" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="0.37237 -0.21444 -5.39447"
+          rotation="23.02316308174187 -91.21087028026115 -86.8735797711208" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-1.05665 1 -5"
+          rotation="-47.05530484070911 139.1777509730234 6.294514337307224" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-1.2047 0.9104 -4.38837"
+          rotation="-26.826456925820274 150.06051133373828 -11.443113084352802"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.85023 0.9104 -4.38837" rotation="13.090366745353919 121.6509720199715 -5.137712548938092"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.12685 1.00423 -4.38837" rotation="13.090366745353919 -158.9035419437874 -5.137712548938092"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-2.12685 0.39098 -4.38837" rotation="13.090366745353919 -158.9035419437874 -5.137712548938092"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.62394 0.67288 -4.90707" rotation="20.587519494640738 -174.59742891021577 -48.53239003655638"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.62394 0.67288 -5.48086" rotation="20.587519494640738 -174.59742891021577 -48.53239003655638"
+          scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-0.2963 0.44568 -5.54221"
+          rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-1.05665 1 -5"
+          rotation="-47.05530484070911 139.1777509730234 6.294514337307224" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-1.47238 1.17536 -5"
+          rotation="5.120523815084168 -166.37319271890794 -17.502141767861257"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.47238 1.29652 -4.37486" rotation="5.120523815084168 -166.37319271890794 -17.502141767861257"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-1.47238 1.17536 -5.61379" rotation="5.120523815084168 -166.37319271890794 -17.502141767861257"
+          scale="0.05 0.05 0.05"></a-entity><a-entity gltf-model="assets/Soda Can.glb"
+          position="-0.80948 1.17536 -5.61379" rotation="9.370724739364613 160.20816684330026 -36.94202679885497"
+          scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-1.72409 1.71314 -5.05035"
+          rotation="-8.313044649553113 177.78651199791392 11.88027988203762" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-1.90043 1.71314 -4.50756"
+          rotation="-8.313044649553113 177.78651199791392 11.88027988203762" scale="0.05 0.05 0.05"></a-entity><a-entity
+          gltf-model="assets/Soda Can.glb" position="-1.72409 1.71314 -5.61204"
+          rotation="-8.313044649553113 177.78651199791392 11.88027988203762" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity gltf-model="assets/Soda Can.glb" position="-1.81924 2.26782 -5"
+          rotation="9.609648139934167 -170.45150630464917 -14.62245588953374" scale="0.05 0.05 0.05"></a-entity>
+      </a-entity>
+
+
+
+      <!-- Rectangle néon bleu -->
+      <a-plane position="-0.87358 3.04999 -5.04618" width="1
+    q" height="2" color="#00E5FF" material="side: double; emissive: #00E5FF; emissiveIntensity: 1.16"
+        rotation="-0.17818987428568603 -89.7045642368622 -89.91541270547036" geometry="height: 2.18; width: 0.93"
+        scale="1.45 1 1">
+        <!-- Lumière du néon -->
+        <a-entity light="color: #00E5FF; distance: 8; intensity: 10; type: point" position="0 0 0.5"></a-entity>
+      </a-plane>
+
+      <!-- Lumières pour ambiance bleu/violet -->
+      <a-entity light="color: #5B7FCC; intensity: 0.3; type: ambient"></a-entity>
+      <a-entity light="color: #7BA3E8; intensity: 0.4" position="2 5 1"></a-entity>
+      <a-entity light="color: #00E5FF; distance: 10; intensity: 1.5; type: point" position="0 3 -5"></a-entity>
+
+    </a-entity>
+
 
     <!-- Ciel bleu foncé avec gradient vers violet -->
-    <a-sky color="#1A3B6B"
-      animation="property: color; from: #1A3B6B; to: #2D2857; dur: 8000; dir: alternate; loop: true">
+    <a-sky color="rgba(27,58,106,1)"
+      animation="dir: alternate; dur: 8000; from: #1A3B6B; loop: true; property: color; to: #2D2857">
     </a-sky>
   </a-scene>
 </body>
