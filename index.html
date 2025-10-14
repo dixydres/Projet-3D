@@ -4,23 +4,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A-Frame Scene 1</title>
+  <title>Scène de fridge 3D</title>
 
   <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
 <body>
-  <a-assets>
-    <a-asset-item id="camping" src="assets/camping.glb" crossorigin="anonymous">
-  </a-assets>
-  <a-scene>
 
-    <a-box position="-0.06406 3.08678 -5.53812" rotation="0.64 45.16 0" color="#4CC3D9"></a-box>
-    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-    <a-sky color="#ECECEC"></a-sky>
-    <a-camera> </a-camera>
+  <a-scene fog="type: exponential; color: #2B4A7C; density: 0.25">
+    <a-assets>
+      <a-asset-item id="fridge" src="assets/Ice Box.glb"></a-asset-item>
+      <a-asset-item id="can" src="assets/Soda Can.glb"></a-asset-item>
+
+    </a-assets>
+
+    <a-entity gltf-model="#fridge" position="0 1 -5" rotation="0 180 0" scale="5 5 5"></a-entity>
+    <a-entity gltf-model="#can" position="0 1 -5" rotation="0 180 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-0.41477 1 -5"
+      rotation="-3.680107918125277 174.2576649377032 -27.66354826450641" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-0.19485 1 -4.2616" rotation="0 180 0"
+      scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-0.41477 1 -4.28061"
+      rotation="-3.680107918125277 174.2576649377032 -27.66354826450641" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-0.2963 0.44568 -5.54221"
+      rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-1.05665 1 -5"
+      rotation="-47.05530484070911 139.1777509730234 6.294514337307224" scale="0.05 0.05 0.05"></a-entity><a-entity
+      gltf-model="assets/Soda Can.glb" position="-0.2963 0.44568 -5.54221"
+      rotation="-74.74005254363536 179.9998479605043 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-1.05665 1 -5"
+      rotation="-47.05530484070911 139.1777509730234 6.294514337307224" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-1.47238 1.17536 -5"
+      rotation="5.120523815084168 -166.37319271890794 -17.502141767861257" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-1.72409 1.71314 -5"
+      rotation="-8.313044649553113 177.78651199791392 11.88027988203762" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity gltf-model="assets/Soda Can.glb" position="-1.81924 2.26782 -5"
+      rotation="9.609648139934167 -170.45150630464917 -14.62245588953374" scale="0.05 0.05 0.05"></a-entity>
+    <!--Rectangle -->
+    <a-box position="-0.56333 2.29226 -4.72974" width="1
+    q" height="2" color="#00E5FF" material="anisotropy: 0.01; color: #0e1e38; emissiveIntensity: -5.56"
+      -0.17818987428568603="" -89.7045642368622="" -89.91541270547036"=""
+      geometry="depth: 2.16; height: 0.23; width: 0.26">
+
+
+    </a-box>
+    <a-box position="-0.57074 3.42395 -4.72974" width="1
+    q" height="2" color="#00E5FF" material="anisotropy: 0.01; color: #0e1e38; emissiveIntensity: -5.56"
+      -0.17818987428568603="" -89.7045642368622="" -89.91541270547036"=""
+      geometry="depth: 2.16; height: 0.23; width: 0.26">
+
+
+    </a-box>
+    <!-- Rectangle néon bleu -->
+    <a-plane position="-0.6161 2.8669 -4.72974" width="1
+    q" height="2" color="#00E5FF" material="side: double; emissive: #00E5FF"
+      rotation="-0.17818987428568603 -89.7045642368622 -89.91541270547036" geometry="height: 2.18; width: 0.93">
+      <!-- Lumière du néon -->
+      <a-entity light="color: #00E5FF; distance: 8; intensity: 10; type: point" position="0 0 0.5"></a-entity>
+    </a-plane>
+    <a-plane position="-0.62508 1.60212 -5.73173" width="1
+    q" height="2" color="#00E5FF" material="side: double; emissive: #00E5FF"
+      rotation="-0.17818987428568603 0.6079082206338035 -89.91541270547036" geometry="height: 0.14; width: 3.56"
+      id="neon">
+      <!-- Lumière du néon -->
+      <a-entity light="color: #00E5FF; distance: 8; intensity: 10; type: point" position="0 0 0.5"></a-entity>
+    </a-plane>
+
+    <!-- Lumières pour ambiance bleu/violet -->
+    <a-entity light="type: ambient; intensity: 0.3; color: #5B7FCC"></a-entity>
+    <a-entity light="type: directional; intensity: 0.4; color: #7BA3E8" position="2 5 1"></a-entity>
+    <a-entity light="type: point; intensity: 1.5; color: #00E5FF; distance: 10" position="0 3 -5"></a-entity>
+
+    <!-- Ciel bleu foncé avec gradient vers violet -->
+    <a-sky color="#1A3B6B"
+      animation="property: color; from: #1A3B6B; to: #2D2857; dur: 8000; dir: alternate; loop: true">
+    </a-sky>
   </a-scene>
 </body>
 
